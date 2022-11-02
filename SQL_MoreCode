@@ -1,0 +1,96 @@
+CREATE TABLE EmployeeDemographics
+(
+EmployeeID varchar(50),
+FirstName varchar(50),
+LastName varchar(50),
+Age int,
+Gender varchar(50)
+)
+
+
+INSERT INTo EmployeeDemographics VALUES
+(1002, 'Pam', 'Kiss', 57, 'Female'),
+(1003, 'Dave', 'Rig', 38, 'Male'),
+ (1004, 'Kate', 'Moon', 29, 'Female')
+ (1005, 'Max', 'Plank', 49, 'Male'),
+ (1006, 'Luke', 'Bowen', 42, 'Male'),
+  (1007, 'Kevin', 'Malone', 18, 'Male')
+  (1008, 'Angela', 'Davis', 32, 'Female')
+  (1009, 'Katy', 'Stone', 38, 'Female')
+
+CREATE TABLE EmployeeSalary
+(
+EmployeeID int,
+JobTitle Varchar(50),
+Salary int
+)
+Insert Into EmployeeSalary VALUES
+(1001, 'Salesman', 45000),
+(1002, 'Receptionist', 36000),
+(1003, 'Salesman', 63000),
+(1004, 'Accountant', 47000),
+(1005, 'HR', 50000),
+(1006, 'Regional Manager', 65000),
+(1007, 'Supplier Relations', 41000),
+(1008, 'Salesman', 48000),
+(1009, 'Accountant', 42000)
+
+SELECT FirstName, LastName FROM EmployeeDemographics
+
+SELECT DISTINCT(Age)
+FROM EmployeeDemographics
+
+SELECT COUNT(lastname) AS LastNameCount
+FROM EmployeeDemographics
+
+SELECT * FROM EmployeeSalary
+
+SELECT MAX(salary) 
+FROM EmployeeSalary
+
+SELECT MAX(salary) 
+FROM EmployeeSalary
+
+SELECT * 
+From EmployeeDemographics
+WHERE firstname = 'Katy'
+
+SELECT * 
+From EmployeeDemographics
+WHERE firstname <> 'Katy'
+
+SELECT * 
+From EmployeeDemographics
+WHERE age >= 40 AND Gender ='Male'
+
+SELECT * 
+From EmployeeDemographics
+WHERE lastname LIKE 'S%'
+
+SELECT * 
+From EmployeeDemographics
+WHERE lastname LIKE '%S%'
+
+SELECT * 
+From EmployeeDemographics
+WHERE lastname LIKE 'S%o%'
+
+SELECT * 
+From EmployeeDemographics
+WHERE lastname IN('Davis', 'Bowen')
+
+SELECT gender, COUNT(gender)
+From EmployeeDemographics
+GROUP BY gender, age
+
+SELECT gender, age, COUNT(gender)
+From EmployeeDemographics
+WHERE age >= 40
+GROUP BY gender, age
+
+SELECT *
+From EmployeeDemographics
+ORDER BY age ASC
+SELECT *
+From EmployeeDemographics
+ORDER BY age 
